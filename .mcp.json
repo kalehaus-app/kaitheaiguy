@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "unum": {
+      "type": "http",
+      "url": "https://api.unum.la/mcp"
+    }
+  }
+}
