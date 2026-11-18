@@ -1,0 +1,10 @@
+I asked 5 AIs: should I quit my job?
+Only {{N}} said yes.
+ChatGPT: {{real answer, 6 words max}}
+Gemini: {{real answer}}
+Grok: {{real answer}}
+Perplexity: {{real answer}}
+And Claude? Asked me one question back.
+{{the real question Claude asked}}
+That's the AI I'd listen to before I quit my job.
+Which AI would you ask before you quit? Comment it.
