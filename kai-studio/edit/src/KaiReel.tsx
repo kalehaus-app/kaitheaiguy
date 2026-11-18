@@ -71,29 +71,38 @@ const SEAM = 960;
 
 const sec = (s: number, fps: number) => Math.round(s * fps);
 
-// ---------- Kai footage ----------
-const KaiVideo: React.FC<{src: string; layout: 'split' | 'full'; beatStart: number}> = ({
-  src,
-  layout,
-  beatStart,
-}) => {
+const ContinuousKai: React.FC<{spec: ReelSpec}> = ({spec}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
-  // slow push-in on full-screen beats so the frame is never static
-  const local = frame - sec(beatStart, fps);
-  const scale = layout === 'full' ? interpolate(local, [0, 90], [1.12, 1.2], {extrapolateRight: 'clamp'}) : 1.0;
-  const style: React.CSSProperties =
-    layout === 'full'
-      ? {position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 40%', transform: `scale(${scale})`}
-      : {width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 45%', transform: 'scale(1.3)', transformOrigin: '50% 38%'};
-  if (layout === 'split') {
-    return (
-      <div style={{position: 'absolute', left: 0, top: SEAM, width: 1080, height: 1920 - SEAM, overflow: 'hidden'}}>
-        <OffthreadVideo src={staticFile(src)} style={style} />
-      </div>
-    );
-  }
-  return <OffthreadVideo src={staticFile(src)} style={style} />;
+  const t = frame / fps;
+  const beat = spec.beats.find((b) => t >= b.start && t < b.end) ?? spec.beats[spec.beats.length - 1];
+  const local = frame - sec(beat.start, fps);
+  const push = interpolate(local, [0, 90], [1.12, 1.2], {extrapolateRight: 'clamp'});
+  const full = beat.layout === 'full';
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: 0,
+        top: full ? 0 : SEAM,
+        width: 1080,
+        height: full ? 1920 : 1920 - SEAM,
+        overflow: 'hidden',
+      }}
+    >
+      <OffthreadVideo
+        src={staticFile(spec.video)}
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: full ? '50% 40%' : '50% 45%',
+          transform: `scale(${full ? push : 1.3})`,
+          transformOrigin: full ? '50% 50%' : '50% 38%',
+        }}
+      />
+    </div>
+  );
 };
 
 // ---------- panels ----------
@@ -334,12 +343,9 @@ export const KaiReel: React.FC<{specFile: string; spec?: ReelSpec}> = ({spec}) =
         </Sequence>
       ))}
 
-      {/* Kai: one continuous take, re-framed per beat (bottom half or full screen) */}
-      {spec.beats.map((b, i) => (
-        <Sequence key={'v' + i} from={sec(b.start, fps)} durationInFrames={Math.max(1, sec(b.end, fps) - sec(b.start, fps))}>
-          <KaiVideo src={spec.video} layout={b.layout} beatStart={0} />
-        </Sequence>
-      ))}
+      {/* Kai: ONE continuous take for the whole reel. Only the framing changes per beat;
+          the clip itself is never restarted (a Sequence per beat would replay it from 0). */}
+      <ContinuousKai spec={spec} />
 
       {/* seam shadow so captions read on the cut line */}
       {spec.beats.map((b, i) =>
