@@ -1,0 +1,252 @@
+{
+ "video": "kai01.mp4",
+ "duration": 24.2,
+ "hud": {
+  "left": "KAI \u00b7 FILE 001",
+  "right": "AI-MADE"
+ },
+ "beats": [
+  {
+   "start": 0,
+   "end": 1.6,
+   "layout": "full",
+   "sfx": "boom"
+  },
+  {
+   "start": 1.6,
+   "end": 3.9,
+   "layout": "split",
+   "panel": {
+    "type": "chat",
+    "label": "claude",
+    "text": "make today's reel. star: me."
+   },
+   "sfx": "whoosh"
+  },
+  {
+   "start": 3.9,
+   "end": 6.2,
+   "layout": "split",
+   "panel": {
+    "type": "avatar",
+    "label": "heygen avatar"
+   },
+   "sfx": "whoosh"
+  },
+  {
+   "start": 6.2,
+   "end": 8.15,
+   "layout": "split",
+   "panel": {
+    "type": "wave",
+    "label": "ai voice"
+   },
+   "sfx": "whoosh"
+  },
+  {
+   "start": 8.15,
+   "end": 11.15,
+   "layout": "split",
+   "panel": {
+    "type": "cards",
+    "items": [
+     "SCRIPT",
+     "HOOK",
+     "EDIT"
+    ],
+    "delays": [
+     0.1,
+     1.3,
+     2.05
+    ]
+   },
+   "sfx": "pop"
+  },
+  {
+   "start": 11.15,
+   "end": 12.65,
+   "layout": "split",
+   "panel": {
+    "type": "approve"
+   },
+   "sfx": "pop"
+  },
+  {
+   "start": 12.65,
+   "end": 14.7,
+   "layout": "full",
+   "sfx": "whoosh"
+  },
+  {
+   "start": 14.7,
+   "end": 17.7,
+   "layout": "split",
+   "panel": {
+    "type": "stamp",
+    "text": "TESTED",
+    "sub": "every single day"
+   },
+   "sfx": "boom"
+  },
+  {
+   "start": 17.7,
+   "end": 20.35,
+   "layout": "split",
+   "panel": {
+    "type": "counter",
+    "from": 0,
+    "to": 10000,
+    "label": "goal \u00b7 dec 31"
+   },
+   "sfx": "whoosh"
+  },
+  {
+   "start": 20.35,
+   "end": 21.25,
+   "layout": "split",
+   "panel": {
+    "type": "counter",
+    "from": 10000,
+    "to": 4,
+    "label": "actual followers",
+    "crash": true
+   },
+   "sfx": "boom"
+  },
+  {
+   "start": 21.25,
+   "end": 24.2,
+   "layout": "split",
+   "panel": {
+    "type": "follow",
+    "handle": "@kaitheaiguy"
+   },
+   "sfx": "pop"
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.24,
+   "end": 1.73,
+   "text": "I'M NOT A real PERSON",
+   "key": "real"
+  },
+  {
+   "start": 1.73,
+   "end": 2.43,
+   "text": "CLAUDE MAKES"
+  },
+  {
+   "start": 2.43,
+   "end": 4.07,
+   "text": "EVERY video OF ME",
+   "key": "video"
+  },
+  {
+   "start": 4.07,
+   "end": 4.92,
+   "text": "THIS face?",
+   "key": "face"
+  },
+  {
+   "start": 4.92,
+   "end": 6.38,
+   "text": "A HEYGEN avatar",
+   "key": "avatar"
+  },
+  {
+   "start": 6.38,
+   "end": 7.16,
+   "text": "THIS voice?",
+   "key": "voice"
+  },
+  {
+   "start": 7.16,
+   "end": 8.29,
+   "text": "ALSO AI.",
+   "key": "ai"
+  },
+  {
+   "start": 8.29,
+   "end": 9.45,
+   "text": "CLAUDE WRITES THE script,",
+   "key": "script"
+  },
+  {
+   "start": 9.45,
+   "end": 10.19,
+   "text": "PICKS THE hook,",
+   "key": "hook"
+  },
+  {
+   "start": 10.19,
+   "end": 11.27,
+   "text": "CUTS THE edit.",
+   "key": "edit"
+  },
+  {
+   "start": 11.27,
+   "end": 12.81,
+   "text": "ONE HUMAN HITS approve.",
+   "key": "approve"
+  },
+  {
+   "start": 12.81,
+   "end": 14.85,
+   "text": "SO WHY FOLLOW AN AI?",
+   "key": "ai"
+  },
+  {
+   "start": 14.85,
+   "end": 16.25,
+   "text": "I TEST AI every DAY,",
+   "key": "every"
+  },
+  {
+   "start": 16.25,
+   "end": 17.83,
+   "text": "SO YOU don't HAVE TO.",
+   "key": "don't"
+  },
+  {
+   "start": 17.83,
+   "end": 18.4,
+   "text": "GOAL:"
+  },
+  {
+   "start": 18.4,
+   "end": 19.35,
+   "text": "10,000 followers",
+   "key": "followers"
+  },
+  {
+   "start": 19.35,
+   "end": 20.45,
+   "text": "BY NEW year's",
+   "key": "year's"
+  },
+  {
+   "start": 20.45,
+   "end": 21.35,
+   "text": "I HAVE 4.",
+   "key": "4"
+  },
+  {
+   "start": 21.35,
+   "end": 22.0,
+   "text": "FOLLOW,"
+  },
+  {
+   "start": 22.0,
+   "end": 23.1,
+   "text": "WATCH A fake PERSON",
+   "key": "fake"
+  },
+  {
+   "start": 23.1,
+   "end": 24.2,
+   "text": "GET real FOLLOWERS",
+   "key": "real"
+  }
+ ]
+}
